@@ -16,513 +16,910 @@ interface SlideContent {
     text?: ReactNode;
   };
   transition?: 'slide-left' | 'slide-right' | 'fade';
-  background?: string; // Add optional background property
+  background?: string;
 }
 
 export const presentationSlides: SlideContent[] = [
+  // Slide 1: Title Slide
   {
     component: TitleSlide,
     props: {
-      title: 'Generative AI for Everyone',
+      title: 'Artificial Intelligence & LLMs Explained',
       subtitle: (
         <>
-          Gaurav Ahuja
+          🤖 A Journey into the World of Thinking Machines
+          <br />
+          <span className="text-lg mt-4 block">From Calculators to Creativity</span>
         </>
       ),
     },
     transition: 'fade',
-    background: 'animated-gradient', // Apply animated background here
+    background: 'animated-gradient',
   },
+
+  // Slide 2: Agenda
   {
-    component: TextOnly, // Using TextOnly as the content is a list of definitions
+    component: TextOnly,
     props: {
-      title: 'Let’s Demystify the Jargon',
+      title: '🎯 What We\'ll Cover Today',
       content: (
-        <ul className="list-disc list-inside text-left mx-auto">
-          <li><b>Artificial Intelligence</b> – umbrella term for machines that mimic human cognitive functions</li>
-          <li><b>ML</b> – systems that learn from data</li>
-          <li><b>LLM</b> - a kind of AI trained to understand and generate human language</li>
-          <li><b>GPT</b> - Generative Pre-trained Transformer – architecture used by models like ChatGPT</li>
-          <li><b>Neural Network</b> - A system inspired by the brain, made up of layers of mathematical “neurons”</li>
-        </ul>
+        <div className="space-y-6">
+          <div className="flex items-center space-x-4">
+            <span className="text-4xl">🧠</span>
+            <span className="text-xl">Demystifying AI Jargon</span>
+          </div>
+          <div className="flex items-center space-x-4">
+            <span className="text-4xl">⚡</span>
+            <span className="text-xl">How LLMs Actually Work</span>
+          </div>
+          <div className="flex items-center space-x-4">
+            <span className="text-4xl">🛠️</span>
+            <span className="text-xl">Prompt Engineering Techniques</span>
+          </div>
+          <div className="flex items-center space-x-4">
+            <span className="text-4xl">🚀</span>
+            <span className="text-xl">AI Tools for Developers</span>
+          </div>
+          <div className="flex items-center space-x-4">
+            <span className="text-4xl">💡</span>
+            <span className="text-xl">Real-World Applications</span>
+          </div>
+        </div>
       ),
     },
     transition: 'slide-left',
-    background: '#1A1C2C', // Example hex color background
+    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
   },
+
+  // Slide 3: Jargon Buster
   {
-    component: TextOnly, // Using TextOnly for the explanation text
+    component: TextOnly,
     props: {
-      title: 'How It Works: From Baby Talk to Brainstorming',
+      title: '🔍 Let\'s Demystify the Jargon',
       content: (
-        <>
-          <p>
-            The power of Large Language Models lies in their exceptional ability to identify patterns in data and replicate those patterns in new, original ways.
-          </p>
-          <p className="mt-4">
-            <b>Training:</b> Feeding the model huge amounts of text → it learns to predict the next word.
-          </p>
-          <p className="mt-2">
-            <b>Backpropagation:</b> When it's wrong, it adjusts.
-          </p>
-          <p className="mt-2">
-            <b>RLHF:</b> Teaching it not just what’s right, but what’s good.
-          </p>
-          <p className="mt-2">
-            <b>Human Layer:</b> “Don’t teach users how to rob a bank, even if you could.”
-          </p>
-        </>
+        <div className="space-y-4 text-left">
+          <div className="border-l-4 border-electric-blue pl-4">
+            <p><span className="text-electric-blue font-bold">🤖 Artificial Intelligence</span> – umbrella term for machines that mimic human cognitive functions</p>
+          </div>
+          <div className="border-l-4 border-green-400 pl-4">
+            <p><span className="text-green-400 font-bold">📊 ML (Machine Learning)</span> – systems that learn from data without explicit programming</p>
+          </div>
+          <div className="border-l-4 border-purple-400 pl-4">
+            <p><span className="text-purple-400 font-bold">🧠 LLM (Large Language Model)</span> – AI trained to understand and generate human language</p>
+          </div>
+          <div className="border-l-4 border-yellow-400 pl-4">
+            <p><span className="text-yellow-400 font-bold">⚡ GPT</span> – Generative Pre-trained Transformer (architecture used by ChatGPT)</p>
+          </div>
+          <div className="border-l-4 border-pink-400 pl-4">
+            <p><span className="text-pink-400 font-bold">🧩 Neural Network</span> – brain-inspired system of mathematical "neurons"</p>
+          </div>
+        </div>
       ),
     },
     transition: 'slide-left',
-    background: 'animated-gradient', // Special value for animated background
+    background: '#0A0E2A',
   },
+
+  // Slide 4: Evolution Timeline
   {
-    component: TextOnly, // Using TextOnly for the short text
+    component: TextOnly,
     props: {
-      title: 'Models, Models Everywhere',
+      title: '📈 From Calculators to Creativity',
       content: (
-        <>
-          <p>Not just ChatGPT. It’s a jungle of models out there.</p>
-        </>
+        <div className="space-y-8">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-yellow-400 mb-4">THEN</h3>
+            <div className="space-y-2">
+              <p>🧮 Glorified calculators</p>
+              <p>📏 Strictly rule-followers</p>
+              <p>🔒 Limited to programmed tasks</p>
+            </div>
+          </div>
+          
+          <div className="text-center border-t border-gray-600 pt-8">
+            <h3 className="text-2xl font-bold text-electric-blue mb-4">NOW</h3>
+            <div className="space-y-2">
+              <p>🧠 They can learn, reason, and communicate</p>
+              <p>🎨 Enter Generative AI era</p>
+              <p>🚀 Create, not just calculate</p>
+            </div>
+          </div>
+        </div>
       ),
     },
     transition: 'slide-left',
-    // No background specified, will use default
+    background: 'animated-gradient',
   },
+
+  // Slide 5: How LLMs Work
   {
-    component: TextOnly, // Using TextOnly for the list of modalities
+    component: TextWithImage,
     props: {
-      title: 'Modalities',
-      content: (
-        <ul className="list-disc list-inside text-left mx-auto">
-          <li><b>Text → Text:</b> GPT-4, Claude – answer questions, write code</li>
-          <li><b>Text → Image:</b> DALL·E, Midjourney, Sogni – “a cat DJ in space”</li>
-          <li><b>Image → Image:</b> Photoshop AI tools – edit, blend, remix</li>
-          <li><b>Image → Text:</b> CLIP – Describe what’s in an image</li>
-          <li><b>Speech → Text:</b> Transcribe meetings, voice memos</li>
-          <li><b>Text → Audio:</b> Generate soundtracks, voice narration</li>
-          <li><b>Text → Video:</b> AI-generated films from prompts</li>
-        </ul>
-      ),
-    },
-    transition: 'slide-left',
-    background: 'darkblue', // Example color name background
-  },
-  {
-    component: TextOnly, // Using TextOnly for the list
-    props: {
-      title: 'Commercial vs Open Source',
-      content: (
-        <ul className="list-disc list-inside text-left mx-auto">
-          <li>ChatGPT vs LLaMA, ElevenLabs vs Whisper Models</li>
-          <li><b>Online APIs vs Local/Offline:</b> ChatGPT vs Ollama, LMStudio, MLX</li>
-          <li><b>Reasoning Models:</b> More transparent and accountable responses</li>
-          <li><b>Chat vs Instruct:</b> Guided by templates</li>
-        </ul>
-      ),
-    },
-    transition: 'slide-left',
-    // No background specified, will use default
-  },
-  {
-    component: TextOnly, // Using TextOnly for the pipeline text
-    props: {
-      title: 'Vector Embeddings',
-      content: (
-        <p className="text-2xl font-mono">
-          Prompt → Tokenization → Vector Arrays → Inference → Vector Arrays → Output
-        </p>
-      ),
-    },
-    transition: 'slide-left',
-    background: 'animated-gradient', // Special value for animated background
-  },
-  {
-    component: TextOnly, // Using TextOnly for the explanation text
-    props: {
-      title: 'Understanding Vector Embeddings',
-      content: (
-        <>
-          <p>
-            Vectors represent words numerically in high-dimensional space.
-          </p>
-          <p className="mt-4">
-            Embeddings adjust word positions based on context to reflect relationships.
-          </p>
-          <p className="mt-4">
-            Words that appear together often are placed closer together.
-          </p>
-          <p className="mt-4">
-            Models use these semantic networks to predict what comes next in a prompt.
-          </p>
-        </>
-      ),
-    },
-    transition: 'slide-left',
-    // No background specified, will use default
-  },
-  {
-    component: TextOnly, // Using TextOnly for the list of parameters
-    props: {
-      title: 'Control Parameters',
-      content: (
-        <ul className="list-disc list-inside text-left mx-auto">
-          <li><b>Parameter Size</b> – LLaMA 3.2 has 1B, 3B, 7B models</li>
-          <li><b>Quantization</b> – Smaller model sizes</li>
-          <li><b>Temperature</b> – Controls randomness/creativity</li>
-          <li><b>Context Window</b> – Max prompt length</li>
-          <li><b>top_p</b> – Diversity control in generation</li>
-        </ul>
-      ),
-    },
-    transition: 'slide-left',
-    background: 'linear-gradient(to bottom right, #f472b6, #9E7FFF)', // Example gradient
-  },
-  {
-    component: TextOnly, // Using TextOnly for the list of techniques
-    props: {
-      title: 'Prompt Engineering',
-      content: (
-        <>
-          <p>Getting LLMs to do what you want</p>
-          <p className="mt-4">Techniques:</p>
-          <ul className="list-disc list-inside text-left mx-auto mt-2">
-            <li>Zero Shot vs Few Shot Prompting</li>
-            <li>Chain-of-Thought Prompting</li>
-            <li>Human in the Loop</li>
-            <li>Retrieval Augmented Generation (RAG)</li>
-          </ul>
-        </>
-      ),
-    },
-    transition: 'slide-left',
-    // No background specified, will use default
-  },
-  {
-    component: TextOnly, // Using TextOnly for the comparison
-    props: {
-      title: 'Zero Shot vs Few Shot Prompting',
-      content: (
-        <>
-          <p><b>Zero Shot:</b> No examples are given.</p>
-          <p className="mt-2"><b>Few Shot:</b> Prompt contains 1 or more examples.</p>
-          <p className="mt-4">Example:</p>
-          <p className="mt-2"><b>Zero Shot:</b> "Summarize this article."</p>
-          <p className="mt-2"><b>Few Shot:</b> "Here’s how I summarized Article A. Now summarize Article B."</p>
-        </>
-      ),
-    },
-    transition: 'slide-left',
-    background: 'animated-gradient', // Special value for animated background
-  },
-  {
-    component: TextOnly, // Using TextOnly for the list
-    props: {
-      title: 'Chain-of-Thought Prompting',
-      content: (
-        <ul className="list-disc list-inside text-left mx-auto">
-          <li>Break complex tasks into step-by-step reasoning.</li>
-          <li>Help the AI "show its work."</li>
-          <li>Improve accuracy for analytical tasks.</li>
-          <li>Structure problem-solving for better reliability.</li>
-        </ul>
-      ),
-    },
-    transition: 'slide-left',
-    // No background specified, will use default
-  },
-  {
-    component: TextWithImage, // Using TextWithImage for text and suggested infographic
-    props: {
-      title: 'Human-in-the-Loop',
+      title: '⚙️ How It Works: From Baby Talk to Brainstorming',
       text: (
-        <>
-          <p>Use human feedback to guide and validate AI output.</p>
-          <p className="mt-4">Example: A QA tester reviews an AI-generated test case and corrects logic flaws.</p>
-        </>
+        <div className="space-y-4">
+          <p className="text-lg">The power of LLMs lies in their ability to identify patterns in data and replicate them in new, original ways.</p>
+          
+          <div className="space-y-3">
+            <div className="flex items-start space-x-3">
+              <span className="text-blue-400">📚</span>
+              <div>
+                <span className="font-bold text-blue-400">Training:</span>
+                <span className="ml-2">Feeding massive text datasets → learns to predict next word</span>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3">
+              <span className="text-green-400">🔄</span>
+              <div>
+                <span className="font-bold text-green-400">Backpropagation:</span>
+                <span className="ml-2">When wrong, it adjusts its neural weights</span>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3">
+              <span className="text-purple-400">👥</span>
+              <div>
+                <span className="font-bold text-purple-400">RLHF:</span>
+                <span className="ml-2">Teaching it not just what's right, but what's good</span>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3">
+              <span className="text-red-400">🛡️</span>
+              <div>
+                <span className="font-bold text-red-400">Human Layer:</span>
+                <span className="ml-2">"Don't teach users how to rob a bank, even if you could"</span>
+              </div>
+            </div>
+          </div>
+        </div>
       ),
-      imageUrl: 'https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Placeholder for infographic
-      imageAlt: 'Human feedback loop diagram',
+      imageUrl: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      imageAlt: 'Neural network visualization',
       imagePosition: 'right',
     },
     transition: 'slide-left',
-    background: '#0A0E2A', // Example hex color
+    background: '#1A1C2C',
   },
+
+  // Slide 6: Vector Embeddings Pipeline
   {
-    component: TextWithImage, // Using TextWithImage for text and suggested animation
+    component: TextOnly,
     props: {
-      title: 'Retrieval-Augmented Generation (RAG)',
-      text: (
-        <>
-          <p>- Leverage external data sources.</p>
-          <p className="mt-2">- Augment prompt with contextual knowledge.</p>
-          <p className="mt-2">- Improve reliability and accuracy.</p>
-          <p className="mt-4">Example: Feed relevant internal documents when asking AI to summarize a company policy.</p>
-        </>
+      title: '🔢 The Vector Embeddings Pipeline',
+      content: (
+        <div className="space-y-8">
+          <div className="text-center">
+            <p className="text-3xl font-mono bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Prompt → Tokenization → Vector Arrays → Inference → Vector Arrays → Output
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-8 mt-8">
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-electric-blue">🎯 What are Vectors?</h3>
+              <p>Numbers representing words in high-dimensional space</p>
+              <p>Similar words cluster together</p>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-purple-400">🧠 How Embeddings Work</h3>
+              <p>Context adjusts word positions</p>
+              <p>Semantic relationships emerge naturally</p>
+            </div>
+          </div>
+        </div>
       ),
-      imageUrl: 'https://images.pexels.com/photos/7375/startup-photos.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Placeholder for animation
+    },
+    transition: 'slide-left',
+    background: 'animated-gradient',
+  },
+
+  // Slide 7: Model Varieties
+  {
+    component: TextOnly,
+    props: {
+      title: '🌍 Models, Models Everywhere',
+      content: (
+        <div className="space-y-6">
+          <p className="text-xl text-center mb-8">Not just ChatGPT. It's a jungle of models out there! 🌴</p>
+          
+          <div className="grid grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-green-400">💰 Commercial</h3>
+              <ul className="space-y-2">
+                <li>• ChatGPT (OpenAI)</li>
+                <li>• Claude (Anthropic)</li>
+                <li>• Gemini (Google)</li>
+                <li>• ElevenLabs (Voice)</li>
+              </ul>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-blue-400">🔓 Open Source</h3>
+              <ul className="space-y-2">
+                <li>• LLaMA (Meta)</li>
+                <li>• Whisper (OpenAI)</li>
+                <li>• Stable Diffusion</li>
+                <li>• Ollama (Local)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8 p-4 bg-gray-800 rounded-lg">
+            <p className="text-yellow-400">💡 <strong>Pro Tip:</strong> Online APIs vs Local/Offline deployment</p>
+          </div>
+        </div>
+      ),
+    },
+    transition: 'slide-left',
+    background: '#0A0E2A',
+  },
+
+  // Slide 8: Modalities
+  {
+    component: TextOnly,
+    props: {
+      title: '🎭 AI Modalities: Beyond Text',
+      content: (
+        <div className="grid grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">💬</span>
+              <div>
+                <span className="font-bold text-blue-400">Text → Text:</span>
+                <p className="text-sm">GPT-4, Claude – answer questions, write code</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">🎨</span>
+              <div>
+                <span className="font-bold text-purple-400">Text → Image:</span>
+                <p className="text-sm">DALL·E, Midjourney – "a cat DJ in space"</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">🖼️</span>
+              <div>
+                <span className="font-bold text-green-400">Image → Image:</span>
+                <p className="text-sm">Photoshop AI – edit, blend, remix</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">👁️</span>
+              <div>
+                <span className="font-bold text-yellow-400">Image → Text:</span>
+                <p className="text-sm">CLIP – describe what's in an image</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">🎤</span>
+              <div>
+                <span className="font-bold text-red-400">Speech → Text:</span>
+                <p className="text-sm">Transcribe meetings, voice memos</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">🔊</span>
+              <div>
+                <span className="font-bold text-pink-400">Text → Audio:</span>
+                <p className="text-sm">Generate soundtracks, voice narration</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">🎬</span>
+              <div>
+                <span className="font-bold text-cyan-400">Text → Video:</span>
+                <p className="text-sm">AI-generated films from prompts</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">🧬</span>
+              <div>
+                <span className="font-bold text-orange-400">Multimodal:</span>
+                <p className="text-sm">GPT-4V – see, hear, and respond</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    transition: 'slide-left',
+    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+  },
+
+  // Slide 9: Control Parameters
+  {
+    component: TextWithImage,
+    props: {
+      title: '🎛️ Control Parameters: Fine-Tuning AI Behavior',
+      text: (
+        <div className="space-y-4">
+          <div className="space-y-3">
+            <div className="p-3 bg-gray-800 rounded">
+              <span className="font-bold text-blue-400">📏 Parameter Size:</span>
+              <p className="text-sm">LLaMA 3.2 has 1B, 3B, 7B models</p>
+            </div>
+            
+            <div className="p-3 bg-gray-800 rounded">
+              <span className="font-bold text-green-400">🗜️ Quantization:</span>
+              <p className="text-sm">Smaller model sizes for efficiency</p>
+            </div>
+            
+            <div className="p-3 bg-gray-800 rounded">
+              <span className="font-bold text-red-400">🌡️ Temperature:</span>
+              <p className="text-sm">Controls randomness/creativity (0.0-2.0)</p>
+            </div>
+            
+            <div className="p-3 bg-gray-800 rounded">
+              <span className="font-bold text-purple-400">📏 Context Window:</span>
+              <p className="text-sm">Maximum prompt length (tokens)</p>
+            </div>
+            
+            <div className="p-3 bg-gray-800 rounded">
+              <span className="font-bold text-yellow-400">🎯 top_p:</span>
+              <p className="text-sm">Diversity control in generation</p>
+            </div>
+          </div>
+        </div>
+      ),
+      imageUrl: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      imageAlt: 'Control panel concept',
+      imagePosition: 'right',
+    },
+    transition: 'slide-left',
+    background: '#1A1C2C',
+  },
+
+  // Slide 10: Prompt Engineering Intro
+  {
+    component: TextOnly,
+    props: {
+      title: '🛠️ Prompt Engineering: Getting LLMs to Do What You Want',
+      content: (
+        <div className="space-y-8">
+          <p className="text-xl text-center">The art and science of communicating with AI 🎨🔬</p>
+          
+          <div className="grid grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-electric-blue">🎯 Core Techniques</h3>
+              <ul className="space-y-2">
+                <li>• Zero Shot vs Few Shot</li>
+                <li>• Chain-of-Thought</li>
+                <li>• Human in the Loop</li>
+                <li>• Retrieval Augmented Generation</li>
+              </ul>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-purple-400">📋 Popular Frameworks</h3>
+              <ul className="space-y-2">
+                <li>• R-T-F (Role-Task-Format)</li>
+                <li>• T-A-G (Task-Action-Goal)</li>
+                <li>• B-A-B (Before-Action-Bridge)</li>
+                <li>• CLEAR (Context-Length-Examples-Audience-Role)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="text-center p-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg">
+            <p className="font-bold">💡 Remember: One prompt = One task for clarity!</p>
+          </div>
+        </div>
+      ),
+    },
+    transition: 'slide-left',
+    background: 'animated-gradient',
+  },
+
+  // Slide 11: Zero Shot vs Few Shot
+  {
+    component: TextOnly,
+    props: {
+      title: '🎯 Zero Shot vs Few Shot Prompting',
+      content: (
+        <div className="space-y-8">
+          <div className="grid grid-cols-2 gap-8">
+            <div className="p-6 bg-blue-900 rounded-lg">
+              <h3 className="text-xl font-bold text-blue-400 mb-4">🎪 Zero Shot</h3>
+              <p className="mb-4">No examples given. The model figures it out.</p>
+              <div className="bg-gray-800 p-3 rounded text-sm">
+                <p className="text-green-400">"Summarize this article."</p>
+              </div>
+            </div>
+            
+            <div className="p-6 bg-purple-900 rounded-lg">
+              <h3 className="text-xl font-bold text-purple-400 mb-4">🎭 Few Shot</h3>
+              <p className="mb-4">Provide 1+ examples to guide behavior.</p>
+              <div className="bg-gray-800 p-3 rounded text-sm">
+                <p className="text-green-400">"Here's how I summarized Article A: [example]</p>
+                <p className="text-green-400">Now summarize Article B."</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center p-4 bg-yellow-600 rounded-lg">
+            <p className="font-bold text-black">⚡ Pro Tip: Few shot typically yields better, more consistent results!</p>
+          </div>
+        </div>
+      ),
+    },
+    transition: 'slide-left',
+    background: '#0A0E2A',
+  },
+
+  // Slide 12: Chain of Thought
+  {
+    component: TextWithImage,
+    props: {
+      title: '🧠 Chain-of-Thought Prompting',
+      text: (
+        <div className="space-y-4">
+          <p className="text-lg">Help AI "show its work" for better reasoning 📝</p>
+          
+          <div className="space-y-3">
+            <div className="flex items-center space-x-3">
+              <span className="text-blue-400">🔗</span>
+              <span>Break complex tasks into step-by-step reasoning</span>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-green-400">👁️</span>
+              <span>Make the AI's thinking process visible</span>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-purple-400">🎯</span>
+              <span>Improve accuracy for analytical tasks</span>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-yellow-400">🏗️</span>
+              <span>Structure problem-solving for reliability</span>
+            </div>
+          </div>
+          
+          <div className="bg-gray-800 p-4 rounded-lg mt-4">
+            <p className="text-sm text-green-400 font-mono">
+              "Let's think step by step:<br/>
+              1. First, identify the key variables...<br/>
+              2. Then, calculate the intermediate values...<br/>
+              3. Finally, combine for the answer..."
+            </p>
+          </div>
+        </div>
+      ),
+      imageUrl: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      imageAlt: 'Chain of thought visualization',
+      imagePosition: 'right',
+    },
+    transition: 'slide-left',
+    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+  },
+
+  // Slide 13: RAG
+  {
+    component: TextWithImage,
+    props: {
+      title: '📚 Retrieval-Augmented Generation (RAG)',
+      text: (
+        <div className="space-y-4">
+          <p className="text-lg">Supercharge AI with external knowledge! 🚀</p>
+          
+          <div className="space-y-3">
+            <div className="flex items-start space-x-3">
+              <span className="text-blue-400">🔍</span>
+              <div>
+                <span className="font-bold">Retrieve:</span>
+                <span className="ml-2">Find relevant documents/data</span>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3">
+              <span className="text-green-400">➕</span>
+              <div>
+                <span className="font-bold">Augment:</span>
+                <span className="ml-2">Add context to your prompt</span>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3">
+              <span className="text-purple-400">✨</span>
+              <div>
+                <span className="font-bold">Generate:</span>
+                <span className="ml-2">AI responds with enriched knowledge</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 rounded-lg">
+            <p className="font-bold">💡 Example: "Using our company policy docs, explain the vacation policy"</p>
+          </div>
+        </div>
+      ),
+      imageUrl: 'https://images.pexels.com/photos/7375/startup-photos.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       imageAlt: 'Data retrieval concept',
       imagePosition: 'right',
     },
     transition: 'slide-left',
-    // No background specified, will use default
+    background: '#1A1C2C',
   },
+
+  // Slide 14: Agentic Workflow
   {
-    component: TextOnly, // Using TextOnly for the list
+    component: TextWithImage,
     props: {
-      title: 'Prompt Frameworks',
-      content: (
-        <>
-          <p>Popular Templates:</p>
-          <ul className="list-disc list-inside text-left mx-auto mt-2">
-            <li>R-T-F (Role - Task - Format)</li>
-            <li>T-A-G (Task - Action - Goal)</li>
-            <li>B-A-B (Before - Action - Bridge)</li>
-          </ul>
-          <p className="mt-4">Pro Tips:</p>
-          <ul className="list-disc list-inside text-left mx-auto mt-2">
-            <li>Wrap sections of prompts in instructions tags.</li>
-            <li>Use one prompt per task for clarity.</li>
-            <li>Iterate and refine prompts based on model output.</li>
-          </ul>
-        </>
-      ),
-    },
-    transition: 'slide-left',
-    background: 'animated-gradient', // Special value for animated background
-  },
-  {
-    component: TextWithImage, // Using TextWithImage for text and suggested interactive
-    props: {
-      title: 'Agentic Workflow',
+      title: '🤖 Agentic Workflow: AI That Takes Action',
       text: (
-        <>
-          <p>Agents = LLM + tools + memory + planning</p>
-          <p className="mt-4">Agents:</p>
-          <ul className="list-disc list-inside text-left mx-auto mt-2">
-            <li>Have a persona or objective</li>
-            <li>Use tools and APIs to complete tasks</li>
-            <li>Plan multi-step workflows</li>
-            <li>Maintain state and iterate</li>
-          </ul>
-        </>
+        <div className="space-y-4">
+          <p className="text-lg font-bold text-electric-blue">Agents = LLM + Tools + Memory + Planning</p>
+          
+          <div className="space-y-3">
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">🎭</span>
+              <span>Have a persona or objective</span>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">🛠️</span>
+              <span>Use tools and APIs to complete tasks</span>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">📋</span>
+              <span>Plan multi-step workflows</span>
+            </div>
+            
+            <div className="flex items-center space-x-3">
+              <span className="text-2xl">🧠</span>
+              <span>Maintain state and iterate</span>
+            </div>
+          </div>
+          
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="text-sm text-yellow-400">🌟 Think: Personal assistant that can actually DO things, not just talk about them!</p>
+          </div>
+        </div>
       ),
-      imageUrl: 'https://images.pexels.com/photos/11030571/pexels-photo-11030571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Placeholder for interactive
+      imageUrl: 'https://images.pexels.com/photos/11030571/pexels-photo-11030571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       imageAlt: 'Agentic workflow concept',
       imagePosition: 'right',
     },
     transition: 'slide-left',
-    // No background specified, will use default
+    background: 'animated-gradient',
   },
+
+  // Slide 15: MCP
   {
-    component: TextWithImage, // Using TextWithImage for text and suggested diagram
-    props: {
-      title: 'Model Context Protocol (MCP)',
-      text: (
-        <>
-          <p>- Think of it as USB for LLMs</p>
-          <p className="mt-2">- Server advertises capabilities</p>
-          <p className="mt-2">- Agent sends schemas</p>
-          <p className="mt-2">- LLM decides what’s useful</p>
-          <p className="mt-4">Helps agents understand tools available to them via natural language schemas</p>
-        </>
-      ),
-    },
-    transition: 'slide-left',
-    imageUrl: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Placeholder for diagram
-    imageAlt: 'Network or protocol diagram',
-    imagePosition: 'right',
-    background: 'linear-gradient(to top left, #38bdf8, #00B2FF)', // Example gradient
-  },
-  {
-    component: TextOnly, // Using TextOnly for the list of tools
-    props: {
-      title: 'AI Tools for Developers',
-      content: (
-        <>
-          <p>Coding Assistants:</p>
-          <ul className="list-disc list-inside text-left mx-auto mt-2">
-            <li>Windsurf</li>
-            <li>GitHub Copilot</li>
-          </ul>
-          <p className="mt-4">Frontend Builders:</p>
-          <ul className="list-disc list-inside text-left mx-auto mt-2">
-            <li>v0.dev</li>
-            <li>bolt.new</li>
-            <li>lovable.dev</li>
-          </ul>
-          <p className="mt-4">General Tools:</p>
-          <ul className="list-disc list-inside text-left mx-auto mt-2">
-            <li>NotebookLLM</li>
-            <li>RepoPrompt</li>
-            <li>LMStudio</li>
-            <li>MLX</li>
-            <li>MCP Manager</li>
-          </ul>
-        </>
-      ),
-    },
-    transition: 'slide-left',
-    // No background specified, will use default
-  },
-  {
-    component: TextOnly, // Using TextOnly for the list of tips
-    props: {
-      title: 'Windsurf Tips (and general AI usage tips)',
-      content: (
-        <ul className="list-disc list-inside text-left mx-auto">
-          <li>Write clear and detailed prompts</li>
-          <li>One prompt = one task</li>
-          <li>Maintain a .windsurfrules file</li>
-          <li>Update model memory often</li>
-          <li>Use voice mode for dictation</li>
-          <li>Start with a base prompt (e.g., from cursor.directory)</li>
-          <li>Plan first, code later</li>
-          <li>Use autocomplete to help write prompts</li>
-        </ul>
-      ),
-    },
-    transition: 'slide-left',
-    background: 'animated-gradient', // Special value for animated background
-  },
-  // Placeholder slides for future content
-   {
     component: TextWithImage,
     props: {
-      title: 'Machine Learning Basics',
+      title: '🔌 Model Context Protocol (MCP)',
       text: (
-        <>
-          <p>
-            Machine Learning (ML) is a subset of AI that focuses on building systems that learn from data
-            without being explicitly programmed.
-          </p>
-          <p className="mt-4">
-            It uses algorithms to parse data, learn from it, and then make a determination or prediction.
-          </p>
-        </>
+        <div className="space-y-4">
+          <p className="text-lg text-electric-blue font-bold">Think of it as USB for LLMs! 🔌</p>
+          
+          <div className="space-y-3">
+            <div className="flex items-start space-x-3">
+              <span className="text-blue-400">📡</span>
+              <div>
+                <span className="font-bold">Server advertises:</span>
+                <span className="ml-2">Available capabilities & tools</span>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3">
+              <span className="text-green-400">📋</span>
+              <div>
+                <span className="font-bold">Agent sends:</span>
+                <span className="ml-2">Natural language schemas</span>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3">
+              <span className="text-purple-400">🧠</span>
+              <div>
+                <span className="font-bold">LLM decides:</span>
+                <span className="ml-2">What's useful for the task</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-gradient-to-r from-green-600 to-blue-600 p-4 rounded-lg">
+            <p className="font-bold">🎯 Result: Agents understand tools via natural language, not code!</p>
+          </div>
+        </div>
       ),
-      imageUrl:
-        'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      imageAlt: 'Machine learning diagram',
+      imageUrl: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      imageAlt: 'Network protocol diagram',
       imagePosition: 'right',
     },
     transition: 'slide-left',
-    // No background specified, will use default
+    background: '#0A0E2A',
   },
-  {
-    component: CodeBlock,
-    props: {
-      title: 'Simple ML Example (Python)',
-      code: String.raw`
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
 
-# Load data
-data = {'hours_studied': [1, 2, 3, 4, 5], 'score': [10, 25, 40, 55, 70]}
-df = pd.DataFrame(data)
-
-# Prepare data
-X = df[['hours_studied']]
-y = df['score']
-
-# Split data
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Train model
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-# Predict
-prediction = model.predict([[6]])
-print(f"Predicted score for 6 hours: {prediction[0]:.2f}")
-      `,
-      language: 'python',
-    },
-    transition: 'slide-left',
-    background: 'animated-gradient', // Special value for animated background
-  },
-  {
-    component: ImageOnly,
-    props: {
-      imageUrl:
-        'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      imageAlt: 'Neural network diagram',
-      caption: 'Deep Learning: A complex subset of Machine Learning.',
-    },
-    transition: 'fade',
-    // No background specified, will use default
-  },
+  // Slide 16: AI Tools for Developers
   {
     component: TextOnly,
     props: {
-      title: 'AI Applications in the Workplace',
+      title: '🛠️ AI Tools for Developers',
       content: (
-        <ul className="list-disc list-inside text-left mx-auto">
-          <li>Automating repetitive tasks (RPA)</li>
-          <li>Enhancing customer service (Chatbots, AI assistants)</li>
-          <li>Improving data analysis and insights</li>
-          <li>Personalizing employee training and development</li>
-          <li>Predictive maintenance and resource allocation</li>
-          <li>Content generation and summarization</li>
-        </ul>
+        <div className="grid grid-cols-3 gap-8">
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-blue-400">💻 Coding Assistants</h3>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <span className="text-green-400">⭐</span>
+                <span>Windsurf</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-purple-400">🐙</span>
+                <span>GitHub Copilot</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-blue-400">🔮</span>
+                <span>Cursor</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">⚡</span>
+                <span>Codeium</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-green-400">🎨 Frontend Builders</h3>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <span className="text-blue-400">🚀</span>
+                <span>v0.dev</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-purple-400">⚡</span>
+                <span>bolt.new</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-pink-400">💖</span>
+                <span>lovable.dev</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-orange-400">🔥</span>
+                <span>Claude Artifacts</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-purple-400">🔧 General Tools</h3>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <span className="text-blue-400">📚</span>
+                <span>NotebookLLM</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-green-400">📁</span>
+                <span>RepoPrompt</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">🖥️</span>
+                <span>LMStudio</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-red-400">🍎</span>
+                <span>MLX (Apple)</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-cyan-400">🔌</span>
+                <span>MCP Manager</span>
+              </div>
+            </div>
+          </div>
+        </div>
       ),
     },
     transition: 'slide-left',
-    background: 'linear-gradient(to right, #f472b6, #38bdf8)', // Example gradient
+    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
   },
-  {
-    component: ChartSlide,
-    props: {
-      title: 'Projected AI Adoption Growth',
-      data: [
-        { year: 2020, adoption: 20 },
-        { year: 2021, adoption: 30 },
-        { year: 2022, adoption: 45 },
-        { year: 2023, adoption: 60 },
-        { year: 2024, adoption: 75 },
-      ],
-      xKey: 'year',
-      yKey: 'adoption',
-      label: 'Adoption Rate (%)',
-    },
-    transition: 'slide-left',
-    // No background specified, will use default
-  },
-  {
-    component: DemoSlide,
-    props: {
-      title: 'Example: AI Chatbot Demo',
-      demoUrl: 'https://example.com/your-chatbot-demo',
-    },
-    transition: 'slide-left',
-    background: 'animated-gradient', // Special value for animated background
-  },
+
+  // Slide 17: Windsurf Tips
   {
     component: TextOnly,
     props: {
-      title: 'Challenges and Considerations',
+      title: '💡 Windsurf Tips (and General AI Usage)',
       content: (
-        <ul className="list-disc list-inside text-left mx-auto">
-          <li>Data privacy and security</li>
-          <li>Ethical implications and bias</li>
-          <li>Job displacement concerns</li>
-          <li>Integration with existing systems</li>
-          <li>Need for skilled workforce</li>
-        </ul>
+        <div className="grid grid-cols-2 gap-8">
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-electric-blue">✍️ Prompting Best Practices</h3>
+            <ul className="space-y-2">
+              <li className="flex items-center space-x-2">
+                <span className="text-green-400">✅</span>
+                <span>Write clear and detailed prompts</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-blue-400">1️⃣</span>
+                <span>One prompt = one task</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-purple-400">📋</span>
+                <span>Plan first, code later</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-yellow-400">🎯</span>
+                <span>Use autocomplete to help write prompts</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-green-400">⚙️ Workflow Optimization</h3>
+            <ul className="space-y-2">
+              <li className="flex items-center space-x-2">
+                <span className="text-red-400">📄</span>
+                <span>Maintain a .windsurfrules file</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-orange-400">🧠</span>
+                <span>Update model memory often</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-pink-400">🎤</span>
+                <span>Use voice mode for dictation</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-cyan-400">🚀</span>
+                <span>Start with base prompts (cursor.directory)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       ),
     },
     transition: 'slide-left',
-    // No background specified, will use default
+    background: 'animated-gradient',
   },
+
+  // Slide 18: Real-World Applications
+  {
+    component: TextOnly,
+    props: {
+      title: '🌍 AI Applications in the Workplace',
+      content: (
+        <div className="grid grid-cols-2 gap-8">
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-blue-400">🏢 Business Operations</h3>
+            <ul className="space-y-2">
+              <li className="flex items-center space-x-2">
+                <span className="text-green-400">🤖</span>
+                <span>Automating repetitive tasks (RPA)</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-purple-400">💬</span>
+                <span>Customer service chatbots</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-yellow-400">📊</span>
+                <span>Data analysis and insights</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-red-400">🔧</span>
+                <span>Predictive maintenance</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-green-400">👥 Human Resources</h3>
+            <ul className="space-y-2">
+              <li className="flex items-center space-x-2">
+                <span className="text-blue-400">🎓</span>
+                <span>Personalized training programs</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-purple-400">📝</span>
+                <span>Content generation & summarization</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-orange-400">🔍</span>
+                <span>Resume screening & matching</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-pink-400">💡</span>
+                <span>Employee sentiment analysis</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      ),
+    },
+    transition: 'slide-left',
+    background: '#1A1C2C',
+  },
+
+  // Slide 19: Challenges
+  {
+    component: TextOnly,
+    props: {
+      title: '⚠️ Challenges and Considerations',
+      content: (
+        <div className="space-y-8">
+          <div className="grid grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-red-400">🚨 Technical Challenges</h3>
+              <ul className="space-y-2">
+                <li className="flex items-center space-x-2">
+                  <span className="text-yellow-400">🔒</span>
+                  <span>Data privacy and security</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <span className="text-orange-400">⚖️</span>
+                  <span>Ethical implications and bias</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <span className="text-purple-400">🔧</span>
+                  <span>Integration with existing systems</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-blue-400">👥 Human Factors</h3>
+              <ul className="space-y-2">
+                <li className="flex items-center space-x-2">
+                  <span className="text-red-400">💼</span>
+                  <span>Job displacement concerns</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <span className="text-green-400">🎓</span>
+                  <span>Need for skilled workforce</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <span className="text-pink-400">🤝</span>
+                  <span>Change management</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="text-center p-6 bg-gradient-to-r from-yellow-600 to-red-600 rounded-lg">
+            <p className="font-bold text-white">🎯 Key: Focus on augmentation, not replacement!</p>
+          </div>
+        </div>
+      ),
+    },
+    transition: 'slide-left',
+    background: '#0A0E2A',
+  },
+
+  // Slide 20: Future & CTA
   {
     component: TitleSlide,
     props: {
       title: 'The Future is Collaborative',
-      subtitle: 'AI as a Partner, Not a Replacement',
+      subtitle: (
+        <>
+          🤝 AI as a Partner, Not a Replacement
+          <br />
+          <br />
+          <div className="text-lg space-y-4">
+            <p>🚀 Start experimenting today</p>
+            <p>📚 Keep learning and adapting</p>
+            <p>🌟 Focus on human-AI collaboration</p>
+            <br />
+            <p className="text-electric-blue">Questions? Let's discuss! 💬</p>
+          </div>
+        </>
+      ),
     },
     transition: 'fade',
-    background: 'linear-gradient(to right, #9E7FFF, #00B2FF)', // Example gradient
+    background: 'animated-gradient',
   },
 ];
