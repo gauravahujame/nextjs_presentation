@@ -91,16 +91,19 @@ export function Presentation() {
 
   return (
     <div className="relative w-screen h-screen overflow-hidden">
-      {presentationSlides.map((slide, index) => (
-        <Slide
-          key={index}
-          isActive={index === currentSlideIndex}
-          transition={slide.transition}
-          direction={direction}
-        >
-          <slide.component {...slide.props} />
-        </Slide>
-      ))}
+      {presentationSlides.map((slide, index) => {
+        const SlideComponent = slide.component;
+        return (
+          <Slide
+            key={index}
+            isActive={index === currentSlideIndex}
+            transition={slide.transition}
+            direction={direction}
+          >
+            <SlideComponent {...slide.props} />
+          </Slide>
+        );
+      })}
 
       {/* Terminal View (Conditionally rendered) */}
       <TerminalView

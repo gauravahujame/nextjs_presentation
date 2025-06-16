@@ -58,7 +58,8 @@ const config: Config = {
         'custom-error': '#ef4444', // Original custom error
 
         // New palette colors
-        'deep-navy': '#0A0E2A',
+        // 'deep-navy': '#0A0E2A',
+        'deep-navy': '#000000',
         'electric-blue': '#00B2FF',
         'light-gray': '#CCCCCC',
         'dark-panel': '#1A1C2C',
